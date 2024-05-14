@@ -6,18 +6,20 @@
     <title>Document</title>
   </head>
   <body>
-    <img src="" id="img" alt="" />
+    <div></div>
   </body>
 
   <script>
-    let show = document.getElementById("img");
+    const div = document.querySelector("div");
+    const paragrafo = document.createElement("p");
+    paragrafo.textContent = "we Bel";
+    div.appendChild(paragrafo);
+    paragrafo.style.color = "red";
 
-    const getImg = async () => {
-      const data = await fetch("https://dog.ceo/api/breeds/image/random");
-      const datajson = await data.json();
-      show.src = datajson.message;
-    };
+    const extraText = document.createTextNode("wewe");
+    paragrafo.appendChild(extraText);
 
-    getImg();
+    paragrafo.setAttribute("data-value", "ciao");
+    console.log(paragrafo.getAttribute("data-value"));
   </script>
 </html>
